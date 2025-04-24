@@ -6,6 +6,9 @@
 - `git clone https://github.com/Predvestnil/radio_nekrasov.git`
 - `cd radio_nekrasov`
 - `pip install -r requirements.txt`
+- `wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip`
+- `unzip -o ngrok-stable-linux-amd64.zip`
+- `wget https://huggingface.co/breezedeus/pix2text-layout-docyolo/resolve/main/doclayout_yolo_docstructbench_imgsz1024.pt`
 - `nohup python /content/server.py & python /content/llm_service.py & python /content/ocr_service.py & python /content/tts_service.py`
 
 ---
