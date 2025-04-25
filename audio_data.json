@@ -1,0 +1,82 @@
+[
+    {
+        "1930": [
+            {
+                "Май": "/static/audio/1930_may.mp3"
+            },
+            {
+                "Июнь": "/static/audio/1930_june.mp3"
+            }
+        ]
+    },
+    {
+        "1940": [
+            {
+                "Январь": "/static/audio/1940_january.mp3"
+            },
+            {
+                "Февраль": "/static/audio/1940_february.mp3"
+            }
+        ]
+    },
+    {
+        "1931": [
+            {
+                "Май": "/static/audio/1930_may.mp3"
+            },
+            {
+                "Июнь": "/static/audio/1930_june.mp3"
+            }
+        ]
+    },
+    {
+        "1941": [
+            {
+                "Январь": "/static/audio/1940_january.mp3"
+            },
+            {
+                "Февраль": "/static/audio/1940_february.mp3"
+            }
+        ]
+    },
+    {
+        "1932": [
+            {
+                "Май": "/static/audio/1930_may.mp3"
+            },
+            {
+                "Июнь": "/static/audio/1930_june.mp3"
+            }
+        ]
+    },
+    {
+        "1942": [
+            {
+                "Январь": "/static/audio/1940_january.mp3"
+            },
+            {
+                "Февраль": "/static/audio/1940_february.mp3"
+            }
+        ]
+    },
+    {
+        "1933": [
+            {
+                "Май": "/static/audio/1930_may.mp3"
+            },
+            {
+                "Июнь": "/static/audio/1930_june.mp3"
+            }
+        ]
+    },
+    {
+        "1943": [
+            {
+                "Январь": "/static/audio/1940_january.mp3"
+            },
+            {
+                "Февраль": "/static/audio/1940_february.mp3"
+            }
+        ]
+    }
+]

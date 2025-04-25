@@ -1,0 +1,475 @@
+/* static/css/styles.css */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 8px;
+}
+@media (max-width: 540px) {
+    .glow-on-hover {
+        width: 150px;
+    }
+}
+@media (max-width: 390px) {
+    .glow-on-hover {
+        width: 100px;
+    }
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--tg-theme-text-color, #fff);
+    text-align: center;
+}
+
+input[type=file] {
+    width: 250px;
+    max-width: 100%;
+    color: #fff;
+    padding: 10px;
+    background: #111;
+    border-radius: 10px;
+    border: 1px solid #555;
+    margin-bottom: 10px;
+}
+
+.subheader {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--tg-theme-hint-color, #999);
+    text-align: center;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.back-button {
+    background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+    color: var(--tg-theme-text-color, #000);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.audio-container {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+audio {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 15px;
+}
+
+.volume-controls {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 15px;
+}
+
+#volume-slider {
+    flex-grow: 1;
+    margin: 0 10px;
+    accent-color: var(--tg-theme-button-color, #3390ec);
+}
+
+.control-button {
+    background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+    color: var(--tg-theme-text-color, #000);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Стили для галереи примеров */
+.sample-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.sample-item {
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    background: #111;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.sample-item:hover {
+    background: #222;
+    border-color: #555;
+}
+
+.sample-item.selected {
+    border-color: #00ffd5;
+    background: #222;
+}
+
+.sample-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.file-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.file-preview-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid #333;
+}
+
+.file-preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.file-preview-item .remove-file {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.file-name {
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 3px;
+    color: #ddd;
+}
+
+.upload-options {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.upload-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.upload-toggle button {
+    background: #111;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-toggle button.active {
+    background: #007bff;
+    border-color: #007bff;
+}
+.sample-slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sample-slider {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sample-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.sample-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.sample-slide img {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.slider-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    border: none;
+    outline: none;
+}
+
+#prev-slide {
+    left: -20px;
+}
+
+#next-slide {
+    right: -20px;
+}
+
+.sample-slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #00ffd5;
+}
+
+.slider-dot.selected {
+    border: 2px solid #00ffd5;
+}
+
+.sample-selection {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.selection-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: #00ffd5;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.sample-slide.selected .selection-indicator {
+    visibility: visible;
+    opacity: 1;
+}
+
+.selected-counter {
+    margin-top: 10px;
+    color: #00ffd5;
+    font-size: 14px;
+    text-align: center;
+}
+
+button.selected {
+    background: #007bff;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+    .sample-slider {
+        height: 150px;
+    }
+    
+    .slider-nav-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    #prev-slide {
+        left: -15px;
+    }
+    
+    #next-slide {
+        right: -15px;
+    }
+}
